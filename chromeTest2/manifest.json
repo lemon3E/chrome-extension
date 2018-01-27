@@ -1,0 +1,29 @@
+{  
+    "manifest_version":2,  
+    "version":"1.0",  
+    "name":"1905",  
+    "description":"chrome extension of 1905",  
+    "icons":{  
+        "46":"images/1905.png"  
+    }, 
+    "browser_action": {
+        "default_icon": {
+            "19":"images/1905.png",
+            "81":"images/1905.png"
+        },
+        "default_title": "getDOM"
+       // "default_popup": "popup.html"
+    }, 
+    "background":{ 
+        "scripts":["js/jquery-1.11.3.js","js/background.js"],
+        "persistent":false
+    }, 
+    
+    "content_scripts":[ 
+        {  
+            "matches":["*:\/\/*\/*"], 
+            "js":["js/jquery-1.11.3.js","js/popup.js"] ,
+            "include_globs":["http://???.gjdyzjb.cn/*","http://???.1905.com/*"]
+        }  
+    ] 
+} 
